@@ -17,6 +17,7 @@ html {
 
   .contenedor{
     max-width: 1200px;
+    width: 95%;
     margin: 0 auto;
   }
 
@@ -28,6 +29,7 @@ html {
   }
   h2{
     font-size: 4rem;
+    line-height: 1; /*INTERLINEADO*/
   }
   h3{
     font-size: 3.2rem;
@@ -43,4 +45,224 @@ html {
 
 .centrar-texto{
   text-align: center;
+}
+.no-margin{
+  margin: 0;
+}
+
+.btn{
+  display: block;
+  text-align: center;
+  padding: 1rem 3rem;
+  margin: 2rem 0;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+}
+
+
+@media (min-width: 768px) {
+  .btn{
+    display: inline-block;
+  }
+  
+}
+.btn-primario{
+  background-color: #000000;
+
+}
+.btn-secundario{
+  background-color: #784d3c;
+}
+
+/* Header */
+@media(min-width:768px){
+
+  /*El llamado @media(min-width:768px) define cuando cambia de grande a pequeño para mobile*/
+  /*Con esto configuramos la vista para que se active dependiendo el tamaño de la pantalla, en este caso el minimo ancho es 768*/
+  /*Se llama media query y sirve para poder usar como mobile o web nuestra pagina*/
+  /*NO HACER GRANDES BLOQUES de media query, no es recomendable, se recomienda hacer muchos bloques pequeños dependiendo de que es el cambio y cuando queres que cambie a pantalla pequeña o grande*/
+  /*Conviene crear un Snipped y llamarlo desde ahi, ahora crearemos uno para Css*/
+  /*Para crear un snniped:
+  1- ponemos ctrl+shift+p y escrbimos snipped
+  2-elegimos configuracion y desp elegimos el lenguaje donde crearemos el sniped en este caso css
+  3-se nos abre un archivo json en este caso css.json
+  4-al final de todo escribimos el snipped, el de ahora es:
+    "media query" :{ /////media query es el nombre con el que identificamos el archivo
+		"prefix": "mq", /////mq es como lo vamos a llamar en css al codigo, (fijarse que siempre se escribe con comillas)
+		"body": [  ///// Aqui empezamos a escribir el cuerpo del archivo, en este caso, el llamado, el minimo de ancho y unos saltos de linea
+			"@media (min-width: $1) {\n\t$0\n}" /// el codigo
+		] //// va entre corchetes....
+	}
+  5- nos paramos en css y escribimos """"""" mq """"""""" y apretamos TAB
+  6-ya tendremos creado nuestro snipped....
+  */
+
+  .barra{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+
+.site-header{
+  background-image: url(../img/banner.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 50rem;
+  
+
+  
+}
+.site-header a{
+  color: #ffffff;
+  text-decoration: none;
+}
+.site-header h1{
+  text-align: center;
+  font-weight: 400;
+}
+.site-header h1 span{
+  font-weight: 700;
+}
+/* Navegacion */
+.navegacion a{
+  text-align: center;
+  display: block;
+  font-size: 1.8rem;
+  color: #ffffff;
+  text-decoration: none;
+}
+@media (min-width: 768px) {
+  .navegacion a{
+    display: inline;
+    margin-right: 2rem;
+  }
+  .navegacion a:last-of-type{
+    margin: 0;
+  }
+  
+}
+/* header texto */
+.texto-header{
+  color: #000000;
+  text-align: center;
+  margin-top: 5rem;
+}
+@media (min-width: 768px) { 
+  .texto-header{
+    margin-top: 23rem;
+  }
+  
+}
+@media (min-width: 768px) {
+  .texto-header p{
+    font-size: 2.2rem;
+    margin-top: 1rem;
+  }
+}
+
+/* Contenido Principal HOME */
+.contenido-principal{
+  display: flex;
+  flex-wrap: wrap;
+}
+.blog ,
+.cursos{
+  flex: 0 0 100%;
+ 
+ /* envez de ese solo podemos poner los tres separados
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 100%; toma una base de 100*/ 
+}
+
+.cursos{
+  order: -1;
+}
+@media (min-width: 768px) {
+  .contenido-principal{
+    justify-content: space-between;
+
+  }
+  .blog{
+    flex-basis: 66.6%;
+  }
+  .cursos{
+    flex-basis: calc(33.3% - 4rem);
+    order: 2;
+
+  }
+  
+}
+
+/* Opcional 
+
+.entrada-blog{
+  display: flex;
+  justify-content: space-between;
+}
+
+.entrada-blog .imagen{
+  flex: 0 0 40%;
+}
+.entrada-blog .contenido-blog{
+  flex: 0 0 calc(60% - 2rem)
+}
+
+*/
+
+/* Opcional 2 */
+
+.entrada-blog{
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #e1e1e1;
+}
+.entrada-blog:last-of-type{
+  border: none;
+}
+
+/* Cursos Sidebar */
+
+.cursos-lista{
+  padding: 0%;
+  list-style: none;
+}
+
+.curso{
+  padding-bottom: 3rem;
+  border-bottom: 1px solid #e1e1e1;
+}
+.curso:last-of-type{
+  border: none;
+}
+.curso p {
+  font-family: 'PT Sans' , sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+}
+.curso p span{
+  font-weight: 400;
+}
+
+/* Footer */
+.site-footer{
+  background-color: #000000;
+  padding: 3rem;
+  margin-top: 4rem;
+}
+.site-footer p {
+  color: #ffffff;
+  font-size: 4rem;
+  font-weight: 400;
+  font-family: 'PT Sans' , sans-serif;
+  text-align: center;
+}
+.site-footer p span {
+  font-weight: 700;
 }
