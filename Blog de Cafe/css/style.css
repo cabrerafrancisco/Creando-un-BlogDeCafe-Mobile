@@ -28,14 +28,14 @@ html {
     font-size: 4.8rem;
   }
   h2{
-    font-size: 4rem;
+    font-size: 3.6rem;
     line-height: 1; /*INTERLINEADO*/
   }
   h3{
-    font-size: 3.2rem;
+    font-size: 2.9rem;
   }
   h4{
-    font-size: 2.8rem;
+    font-size: 2.6rem;
   }
   img{
     max-width: 100%; /*Para que ocupe toda la pantalla*/
@@ -49,7 +49,35 @@ html {
 .no-margin{
   margin: 0;
 }
+/* Grid */
+@media (min-width: 768px) {
+  .grid{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .centrar-columnas{
+    justify-content: center;
+  }
+  .columnas-4{
+    flex: 0 0 calc(33.3% - 1rem );
+  }
+  .columnas-6{
+    flex: 0 0 calc(50% - 1rem );
+  }
+  .columnas-8{
+    flex: 0 0 calc(66.6% - 1rem );
+  }
+  .columnas-10{
+    flex: 0 0 calc(83.3% - 1rem );
+  }
+  .columnas-12{
+    flex: 0 0 100%;
+  }
+  
+}
 
+/* Botones */
 .btn{
   display: block;
   text-align: center;
@@ -61,12 +89,17 @@ html {
   font-weight: 700;
   text-transform: uppercase;
   font-size: 1.6rem;
+  flex: 0 0 100%;
+}
+.btn:hover{
+  cursor: pointer;
 }
 
 
 @media (min-width: 768px) {
   .btn{
     display: inline-block;
+    flex: 0 0 auto;
   }
   
 }
@@ -114,10 +147,7 @@ html {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  height: 50rem;
-  
-
-  
+  height: 46rem;
 }
 .site-header a{
   color: #ffffff;
@@ -156,7 +186,7 @@ html {
 }
 @media (min-width: 768px) { 
   .texto-header{
-    margin-top: 23rem;
+    margin-top: 14rem;
   }
   
 }
@@ -235,6 +265,7 @@ html {
 }
 
 .curso{
+  padding-top: 3rem;
   padding-bottom: 3rem;
   border-bottom: 1px solid #e1e1e1;
 }
@@ -246,7 +277,8 @@ html {
   font-weight: 700;
   font-size: 2rem;
 }
-.curso p span{
+.curso p span, 
+.curso p.descripcion {
   font-weight: 400;
 }
 
@@ -266,3 +298,42 @@ html {
 .site-footer p span {
   font-weight: 700;
 }
+
+/* Contacto */
+.formulario-contacto{
+  background-color: #ffffff;
+  padding: 5rem;
+}
+@media (min-width: 768px) {
+  .formulario-contacto{
+    margin-top: -10rem;
+  }
+  
+}
+
+.formulario-contacto .campo{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.formulario-contacto .campo label{
+  flex: 0 0 8rem;
+}
+
+.formulario-contacto .campo input:not([type="submit"]) ,
+.formulario-contacto textarea{
+  /*LO QUE HACEMOS CON EL INPUT:NOT([TUPE="SUBMIT"]) ES COMPLETAR TODO EL ESPACIO VACIO CON EL RECUADRO A COMPLETAR*/
+
+  flex: 1;
+  border: 1px solid #e1e1e1;
+  padding: 1rem;
+}
+.formulario-contacto textarea{
+  height: 20rem;
+}
+.formulario-contacto .enviar{
+  display: flex;
+  justify-content: flex-end;
+}
+
+
